@@ -19,3 +19,5 @@
 ```bash
   docker run --name volume-app -v "$(pwd)/path":/app/data docker-volume-app
 ```
+
+Read more on volumes [here.](https://docs.docker.com/storage/volumes/)
