@@ -1,0 +1,20 @@
+services:
+  web:
+    depends_on:
+      - db
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - MONGO_URI=mongodb://mohit4bug:mohit4bug@db:27017 # used db instead of localhost to connect to below service
+      - MONGO_DB=killerdb
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mohit4bug
+      - MONGO_INITDB_ROOT_PASSWORD=mohit4bug
+      - MONGO_INITDB_DATABASE=killerdb
